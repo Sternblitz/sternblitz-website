@@ -242,6 +242,12 @@ const PartnerForm = () => {
                 </div>
               </div>
 
+              {/* Hidden inputs to ensure Step 1 data is sent */}
+              <input type="hidden" name="firstName" value={formData.firstName} />
+              <input type="hidden" name="email" value={formData.email} />
+              <input type="hidden" name="phone" value={formData.phone} />
+              <input type="hidden" name="city" value={formData.city} />
+
               <button
                 type="button"
                 onClick={handleFinish}
