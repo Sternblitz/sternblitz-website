@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Outfit', system-ui, sans-serif;
+}
+
+/* Custom Property for Gradient Animation */
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.5s ease-out forwards;
+  }
+
+  .animate-bounce-short {
+    animation: bounceShort 2s infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .path-animate {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    animation: dash 3s ease-in-out infinite;
+  }
+
+  /* Animated Gradient Spin (Clockwise Colors) */
+  .animate-gradient-spin {
+    background: conic-gradient(from var(--gradient-angle),
+        #4285F4,
+        #EA4335,
+        #FBBC05,
+        #4285F4);
+    animation: gradient-rotate 3s linear infinite;
+  }
+
+  /* Animated Gradient Border (Legacy/Alternative) */
+  .animated-gradient-border {
+    position: relative;
+    border-radius: 1.5rem;
+    background: white;
+    z-index: 0;
+  }
+
+  .animated-gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: 1.75rem;
+    background: conic-gradient(from 0deg,
+        #4285F4,
+        #34A853,
+        #FBBC05,
+        #EA4335,
+        #4285F4);
+    z-index: -1;
+    animation: rotate-gradient 4s linear infinite;
+  }
+}
+
+@keyframes gradient-rotate {
+  0% {
+    --gradient-angle: 0deg;
+  }
+
+  100% {
+    --gradient-angle: 360deg;
+  }
+}
+
+@keyframes rotate-gradient {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceShort {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 200;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  80% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: 200% center;
+  }
+
+  100% {
+    background-position: -200% center;
+  }
+}
