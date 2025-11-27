@@ -730,7 +730,7 @@ const PartnershipProcess = () => {
   return (
     <Section id="application-process">
       <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 tracking-tight">Dein Weg zum Partner</h2>
+        <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 tracking-tight">Dein Weg zum Partner.</h2>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto">In 4 einfachen Schritten zum eigenen Business.</p>
       </div>
 
