@@ -1044,7 +1044,7 @@ const Home = () => {
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-1">
             <div className="flex items-center gap-2 mb-6">
-              <img src="/logo-white.png" alt="Sternblitz Logo" className="h-8 object-contain" />
+              <img src="LOGO.png" alt="Sternblitz Logo" className="h-8 brightness-0 invert" onError={(e) => e.target.style.display = 'none'} />
             </div>
             <p className="text-sm leading-relaxed">Wir helfen lokalen Unternehmen, ihren digitalen Ruf zu retten.</p>
           </div>
