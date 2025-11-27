@@ -31,15 +31,16 @@ const VideoModal = ({ isOpen, onClose }) => {
           <X size={24} />
         </button>
         <div className="aspect-video w-full bg-black relative">
-          <video
-            className="w-full h-full object-contain"
-            controls
-            autoPlay
-            src="/1126(1).mp4"
-            poster="/api/placeholder/800/450"
-          >
-            Dein Browser unterstützt dieses Video-Format nicht.
-          </video>
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/6e6fB-B423M?autoplay=1&rel=0"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            className="w-full h-full"
+          ></iframe>
         </div>
       </div>
     </div>
