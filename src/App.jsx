@@ -666,8 +666,8 @@ const SimpleProcess = () => {
   return (
     <Section gray id="process">
       <div className="text-center mb-20">
-        <span className="text-[#4285F4] font-bold tracking-widest uppercase text-xs mb-3 block">Der Ablauf</span>
-        <h2 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tight">Klicken. Zeigen. Kassieren.</h2>
+        <span className="text-[#4285F4] font-bold tracking-widest uppercase text-xs bg-blue-50 px-3 py-1 rounded-full inline-block mb-4">Der Ablauf</span>
+        <h2 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tight">Klicken. &nbsp; Zeigen. &nbsp; Kassieren.</h2>
       </div>
 
       <div className="grid md:grid-cols-3 gap-16 md:gap-8 relative max-w-6xl mx-auto">
