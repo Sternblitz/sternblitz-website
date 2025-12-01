@@ -27,6 +27,31 @@ const Qualified = () => {
         return () => clearInterval(interval);
     }, []);
 
+    // Timer Logic
+    const [timeLeft, setTimeLeft] = React.useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+
+    useEffect(() => {
+        const targetDate = new Date('2025-12-03T19:30:00'); // Target: Dec 3rd, 19:30
+
+        const timer = setInterval(() => {
+            const now = new Date();
+            const difference = targetDate - now;
+
+            if (difference > 0) {
+                setTimeLeft({
+                    days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+                    hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+                    minutes: Math.floor((difference / 1000 / 60) % 60),
+                    seconds: Math.floor((difference / 1000) % 60),
+                });
+            } else {
+                clearInterval(timer);
+            }
+        }, 1000);
+
+        return () => clearInterval(timer);
+    }, []);
+
     return (
         <div className="font-sans antialiased text-gray-800 bg-white min-h-screen">
 
@@ -121,8 +146,21 @@ const Qualified = () => {
                         <div className="flex items-start gap-4 mb-4">
                             <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center shrink-0 text-[#4285F4] font-bold">1</div>
                             <div>
-                                <span className="block text-xs font-bold text-gray-500 uppercase tracking-wider">Wann?</span>
-                                <span className="text-lg font-bold text-gray-900">3.12. 19:30 Uhr</span>
+                                <div>
+                                    <span className="block text-xs font-bold text-gray-500 uppercase tracking-wider">Wann?</span>
+                                    <span className="text-lg font-bold text-gray-900">Mittwoch, 3.12. um 19.30 Uhr</span>
+                                    <div className="flex gap-2 mt-2 text-center">
+                                        {['Tage', 'Std', 'Min', 'Sek'].map((label, i) => {
+                                            const values = [timeLeft.days, timeLeft.hours, timeLeft.minutes, timeLeft.seconds];
+                                            return (
+                                                <div key={label} className="bg-gray-100 rounded-lg p-2 min-w-[50px]">
+                                                    <div className="font-black text-xl text-[#EA4335]">{values[i]}</div>
+                                                    <div className="text-[10px] font-bold text-gray-400 uppercase">{label}</div>
+                                                </div>
+                                            );
+                                        })}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div className="flex items-start gap-4 mb-6">
