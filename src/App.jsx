@@ -5,6 +5,7 @@ import { Download, ArrowRight, CheckCircle, XCircle, Euro, Star, Zap, MapPin, Sm
 import Impressum from './pages/Impressum';
 import Datenschutz from './pages/Datenschutz';
 import AGB from './pages/AGB';
+import Qualified from './pages/Qualified';
 
 // --- Google Vibe Container ---
 const GoogleVibeContainer = ({ children, className = "" }) => (
@@ -1091,6 +1092,7 @@ export default function App() {
         <Route path="/impressum" element={<Impressum />} />
         <Route path="/datenschutz" element={<Datenschutz />} />
         <Route path="/agb" element={<AGB />} />
+        <Route path="/start" element={<Qualified />} />
       </Routes>
     </Router>
   );
