@@ -31,7 +31,7 @@ const Qualified = () => {
     const [timeLeft, setTimeLeft] = React.useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
     useEffect(() => {
-        const targetDate = new Date('2025-12-10T19:30:00'); // Target: Dec 10th, 19:30
+        const targetDate = new Date('2025-12-14T19:30:00'); // Target: Dec 14th, 19:30
 
         const timer = setInterval(() => {
             const now = new Date();
@@ -148,7 +148,7 @@ const Qualified = () => {
                             <div>
                                 <div>
                                     <span className="block text-xs font-bold text-gray-500 uppercase tracking-wider">Wann?</span>
-                                    <span className="text-lg font-bold text-gray-900">Mittwoch, 10.12. um 19.30 Uhr</span>
+                                    <span className="text-lg font-bold text-gray-900">Sonntag, 14.12. um 19.30 Uhr</span>
                                     <div className="flex gap-2 mt-2 text-center">
                                         {['Tage', 'Std', 'Min', 'Sek'].map((label, i) => {
                                             const values = [timeLeft.days, timeLeft.hours, timeLeft.minutes, timeLeft.seconds];
@@ -172,7 +172,7 @@ const Qualified = () => {
                         </div>
 
                         <a
-                            href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sternblitz+Live-Call&dates=20251210T183000Z/20251210T193000Z&details=Wichtiger+Live-Call+f%C3%BCr+das+Onboarding.&location=Zoom+(Link+in+WhatsApp)"
+                            href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Sternblitz+Live-Call&dates=20251214T183000Z/20251214T193000Z&details=Wichtiger+Live-Call+f%C3%BCr+das+Onboarding.&location=Zoom+(Link+in+WhatsApp)"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-full flex items-center justify-center gap-2 bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 font-bold py-3 rounded-xl transition-colors text-sm"
